@@ -1,17 +1,28 @@
 import React from 'react'
-import { Button,Card } from 'react-bootstrap'
+import { Button,Card,Badge,Image,Col } from 'react-bootstrap'
 
-const CardIssue = () => {
+const CardIssue = (props) => {
+    const { title,body,user,link } = props
+    // console.log("aye",user);
+    
     return(
         <Card>
-          <Card.Header as="h5">ocombe</Card.Header>
+          {/* <Card.Header as="h5">ocombe</Card.Header> */}
           <Card.Body>
-            <Card.Title>ci: update packageFiles to be renovated</Card.Title>
+            <Card.Title><a href={link}>{title}</a></Card.Title>
             <Card.Text>
-              {"I have a set of routes configuration that should work after @angular 6.1.0, but it doesn't.\r\n\r\n```\r\nconst routes: Routes = [\r\n  { path: '', children: [\r\n    { path: 'reconciliation', loadChildren: './reconciliation/reconciliation.module#ReconciliationModule' },\r\n  ]}\r\n];\r\n\r\n```\r\n "}
+              {body}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
+            {/* <Button variant="primary">Go somewhere</Button> */}
+            <img 
+                height="25"
+                className="user-icon"
+                src={user.avatar_url}
+            />
+            <Badge pill variant="success">
+              {user.login}
+            </Badge>
+          </Card.Body> 
         </Card>
     )
 }

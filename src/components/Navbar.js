@@ -4,7 +4,7 @@ import logo from '../images/icon.png'
 
 const Nav = () => {
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" className="sticky">
             <Navbar.Brand href="#home">
               <img
                 alt=""
