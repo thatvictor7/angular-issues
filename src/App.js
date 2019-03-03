@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Navbar'
+import Tab from './components/Tab'
+import CardIssue from './components/Card'
 
 class App extends Component {
+  state={
+
+  }
+
+  componentDidMount() {
+    fetch('https://api.github.com/repos/angular/angular/issues')
+      .then(response => response.json())
+      .then(data => this.setState({
+        data
+      }))
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Nav />
+        <Tab />
+        <CardIssue />
+        {console.log(this.state)}
       </div>
     );
   }
