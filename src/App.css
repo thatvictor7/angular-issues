@@ -25,3 +25,8 @@ a:visited {
   width: 90%;
   margin-left: 5%;
 }
+
+.issues-badge {
+  margin-left: .3em;
+  line-height: 1.3;
+}

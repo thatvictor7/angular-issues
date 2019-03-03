@@ -1,19 +1,17 @@
 import React from 'react'
-import { Nav } from 'react-bootstrap'
-import exclamation from '../images/exclamation.png'
+import { Nav,Badge } from 'react-bootstrap'
 
-const Tab = () => {
+const Tab = (props) => {
+    const { count } = props
     return (
         <Nav  variant="tabs" defaultActiveKey="/home">
           <Nav.Item>
             <Nav.Link href="/home" className="tab">
-            <img 
-                width="20"
-                height="20"
-                className="exclamation"
-                src={exclamation}
-                />
-             Issues</Nav.Link>
+             Issues
+             <Badge pill variant="danger" className="issues-badge">
+               {count.length}
+             </Badge>
+             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link disabled eventKey="link-2">Code</Nav.Link>

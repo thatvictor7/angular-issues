@@ -7,8 +7,11 @@ const CardsComposer = (props) => {
     return(
         <div>
             {data.map(issue => {
-                // console.log(issue)
-                return <CardIssue title={issue.title} body={issue.body} user={issue.user} link={issue.html_url}/>
+                return <CardIssue title={issue.title} 
+                                  body={issue.body} 
+                                  user={issue.user} 
+                                  link={issue.html_url}
+                                  assignee={issue.assignee}/>
             })}
         </div>
         )

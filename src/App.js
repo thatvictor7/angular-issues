@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Navbar'
 import Tab from './components/Tab'
-import CardIssue from './components/Card'
 import CardsComposer from './components/CardsComposer'
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 
 
 class App extends Component {
@@ -19,16 +19,13 @@ class App extends Component {
     })
   }
 
-  
-  
   render() {
     return (
       <div>
         <Nav />
-        <Tab />
-        {/* <CardIssue /> */}
-        {this.state.data ?  <CardsComposer data={this.state.data}/> : null}
-        {/* {console.log(this.state)} */}
+        {this.state.data ?  <Tab count={this.state.data}/> : null}
+        {this.state.data ?  <CardsComposer data={this.state.data} /> : null}
+        <ScrollUpButton />
       </div>
     );
   }
