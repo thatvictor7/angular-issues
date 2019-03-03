@@ -74,4 +74,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### git clone project
 
 ## 2.
+### `cd angular-issues`
+
+## 3.
 ### `npm install`
+
+## 4. 
+### `npm start`
